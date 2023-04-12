@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.Navigation
 
 class Splash : Fragment() {
 
@@ -29,10 +30,10 @@ class Splash : Fragment() {
             if (context?.getSharedPreferences("dataregist", Context.MODE_PRIVATE)!!
                     .contains("username")
             ) {
-                Navigation.findNavController(view).navigate(R.id.action_splash_to_homeFragment)
+                Navigation.findNavController(view).navigate(R.id.action_splash_to_home2)
 
             } else {
-                Navigation.findNavController(view).navigate(R.id.action_splash_to_loginFragment)
+                Navigation.findNavController(view).navigate(R.id.action_splash_to_login)
 
             }
 
