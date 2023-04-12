@@ -3,13 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Login"
+    tools:context=".Register"
     android:padding="50dp">
 
 
         <TextView
-            android:id="@+id/tvLogin"
-            android:text="LOGIN"
+            android:id="@+id/tvRegister"
+            android:text="REGISTER"
             android:textSize="24sp"
             android:textColor="@color/black"
             android:gravity="center"
@@ -17,45 +17,53 @@
             android:layout_height="wrap_content"/>
 
         <EditText
-            android:id="@+id/UsernameLogin"
+            android:id="@+id/NameRegister"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
+            android:hint="Name"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:id="@+id/UsernameRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
             android:hint="Username"
             android:minHeight="48dp" />
 
         <EditText
-            android:id="@+id/PasswordLogin"
+            android:id="@+id/PasswordRegister"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="150dp"
             android:hint="Password"
             android:minHeight="48dp" />
 
         <Button
-            android:id="@+id/btnLogin"
+            android:id="@+id/btnRegister"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="150dp"
-            android:text="LOGIN"/>
+            android:layout_marginTop="200dp"
+            android:text="REGISTER"/>
 
         <TextView
             android:id="@+id/tv1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Don't have account yet?"
-            android:layout_below="@+id/btnLogin"
+            android:text="Already have an account?"
+            android:layout_below="@+id/btnRegister"
             android:layout_marginTop="10dp"
             android:layout_marginStart="35dp"/>
 
         <TextView
-            android:id="@+id/tvSignUp"
+            android:id="@+id/tvSignIn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toEndOf="@+id/tv1"
-            android:layout_below="@+id/btnLogin"
+            android:layout_below="@+id/btnRegister"
             android:layout_marginTop="10dp"
             android:layout_marginStart="5dp"
             android:textColor="@color/blue_link"
-            android:text="@string/sign_up_here"/>
+            android:text="@string/sign_in_here"/>
 </RelativeLayout>

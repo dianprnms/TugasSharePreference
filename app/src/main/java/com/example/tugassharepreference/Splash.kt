@@ -2,6 +2,7 @@ package com.example.tugassharepreference
 
 import com.example.tugassharepreference.databinding.FragmentSplashBinding
 import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.os.Handler
 import androidx.fragment.app.Fragment
@@ -12,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.Navigation
 
 class Splash : Fragment() {
-
+    lateinit var sharedPref : SharedPreferences
     lateinit var binding: FragmentSplashBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,15 +26,15 @@ class Splash : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        sharedPref = requireContext().getSharedPreferences("login_data", Context.MODE_PRIVATE)
+        val isLoggedIn = sharedPref.getBoolean("is_logged_in", false)
         Handler().postDelayed({
-            if (context?.getSharedPreferences("dataregist", Context.MODE_PRIVATE)!!
-                    .contains("username")
+            if (isLoggedIn
             ) {
-                Navigation.findNavController(view).navigate(R.id.action_splash_to_homeFragment)
+                Navigation.findNavController(view).navigate(R.id.action_splash_to_home2)
 
             } else {
-                Navigation.findNavController(view).navigate(R.id.action_splash_to_loginFragment)
+                Navigation.findNavController(view).navigate(R.id.action_splash_to_login)
 
             }
 
